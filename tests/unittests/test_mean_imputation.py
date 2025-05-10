@@ -1,15 +1,29 @@
 import unittest
-
 import numpy as np
+import pandas as pd
 
+def mean_impute(df):
+    return df.fillna(df.mean())
 
-def test_mean_imputation():
-    test_array = np.array([np.nan,1,3])
-    expected = np.array([2,1,3])
-    test_output = mean_impute(test_array)
-    np.testing.assert_array_equal(test_output, expected)
+class TestMeanImputation(unittest.TestCase):
+    def test_mean_imputation(self):
+       data = {
+            'A': [1.0, 2.0, None, 4.0, 5.0],
+            'B': [7.0, None, 9.0, 10.0, 11.0]
+        }
+       df = pd.DataFrame(data)
 
+       expected_data = {
+            'A': [1.0, 2.0, 3.0, 4.0, 5.0],         
+            'B': [7.0, 9.25, 9.0, 10.0, 11.0]       
+        }
+       expected_df = pd.DataFrame(expected_data)
+
+       result_df = mean_impute(df)
+
+        
+       pd.testing.assert_frame_equal(result_df, expected_df)
 
 
 if __name__ == '__main__':
-    test_mean_imputation()
+    unittest.main()
