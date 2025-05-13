@@ -16,9 +16,9 @@ Bu proje, veri bilimi uygulamaları dersi için oluşturulmuştur.
 
 ## Yapılacak Görevler
 
--search for other imputation methods
--implement mean&median imputation
--create a model with random forest without imputation
--create an LR model for imputed data
--compare models
--clone repo
+- search for other imputation methods
+- implement mean&median imputation
+- create a model with random forest without imputation
+- create an LR model for imputed data
+- compare models
+- clone repo
