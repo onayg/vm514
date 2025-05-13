@@ -1,6 +1,5 @@
-
-import unittest
 import numpy as np
+
 
 def median_impute_dynamic(arr):
     if not isinstance(arr, np.ndarray):
@@ -31,5 +30,6 @@ def median_impute_dynamic(arr):
     else:
         raise ValueError("Only 1D, 2D or 3D arrays are supported.")
 
-if __name__ == '__main__':
-    unittest.main()
+
+def mean_impute(df):
+    return df.fillna(df.mean())

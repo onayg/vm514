@@ -1,9 +1,8 @@
 import unittest
-import numpy as np
 import pandas as pd
 
-def mean_impute(df):
-    return df.fillna(df.mean())
+from source.imputation_methods import mean_impute
+
 
 class TestMeanImputation(unittest.TestCase):
     def test_mean_imputation(self):
